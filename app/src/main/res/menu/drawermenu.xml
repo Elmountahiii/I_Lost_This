@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/CategorySearch"
+        android:icon="@drawable/ic_category"
+        android:title="Search by Category"
+         />
+
+    <item
+        android:id="@+id/LocationSearch"
+        android:icon="@drawable/ic_location_on"
+        android:title="Search by Location"
+         />
+
+    <item
+        android:id="@+id/itemSearch"
+        android:icon="@drawable/outline_lens_blur_24"
+        android:title="Search by item"
+        />
+</menu>

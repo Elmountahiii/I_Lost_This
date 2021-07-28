@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "710205299334",
+    "project_id": "you-lost-this",
+    "storage_bucket": "you-lost-this.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710205299334:android:1d61038351b8a93347cf07",
+        "android_client_info": {
+          "package_name": "com.redgunner.ilostthis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710205299334-l9v9a3r0cavpue0l3pq6ms2ltu6vipof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC23UOqCMTudDr4Y09vUiEWuZQiXJvuJq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710205299334-l9v9a3r0cavpue0l3pq6ms2ltu6vipof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
