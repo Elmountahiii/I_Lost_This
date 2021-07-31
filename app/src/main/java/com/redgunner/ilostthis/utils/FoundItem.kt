@@ -8,5 +8,6 @@ data class FoundItem(
         var place: String = "",
         var date: String = "",
         var category: String = "",
-        var description: String = ""
+        var description: String = "",
+        var imageUrl:String=""
 )

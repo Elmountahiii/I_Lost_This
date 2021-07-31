@@ -95,6 +95,12 @@
         <action
             android:id="@+id/action_mainFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_locationFragment"
+            app:destination="@id/locationFragment" />
     </fragment>
     <fragment
         android:id="@+id/declareItemFragment"
@@ -105,5 +111,29 @@
         android:id="@+id/detailsFragment"
         android:name="com.redgunner.ilostthis.view.fragment.foundAndLost.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="postId"
+            app:argType="string" />
+        <argument
+            android:name="lostOrFound"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.redgunner.ilostthis.view.fragment.foundAndLost.CategoryFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_categoryFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.redgunner.ilostthis.view.fragment.foundAndLost.LocationFragment"
+        android:label="LocationFragment" >
+        <action
+            android:id="@+id/action_locationFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
 </navigation>

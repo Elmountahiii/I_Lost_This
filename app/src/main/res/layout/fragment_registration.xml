@@ -96,6 +96,16 @@
                 app:layout_constraintGuide_percent="0.5"
                 />
 
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/FacebookButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FacebookLogIn" />
 
 
 

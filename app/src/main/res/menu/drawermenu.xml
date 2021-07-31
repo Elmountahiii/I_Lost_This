@@ -4,6 +4,12 @@
 
 
     <item
+        android:id="@+id/itemSearch"
+        android:icon="@drawable/outline_lens_blur_24"
+        android:title="Search by item"
+        />
+
+    <item
         android:id="@+id/CategorySearch"
         android:icon="@drawable/ic_category"
         android:title="Search by Category"
@@ -15,9 +21,5 @@
         android:title="Search by Location"
          />
 
-    <item
-        android:id="@+id/itemSearch"
-        android:icon="@drawable/outline_lens_blur_24"
-        android:title="Search by item"
-        />
+
 </menu>

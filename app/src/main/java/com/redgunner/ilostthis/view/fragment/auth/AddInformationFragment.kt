@@ -2,13 +2,16 @@ package com.redgunner.ilostthis.view.fragment.auth
 
 
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.redgunner.ilostthis.R
 import com.redgunner.ilostthis.utils.User
 import com.redgunner.ilostthis.viewModel.AuthViewModel
 import kotlinx.android.synthetic.main.fragment_add_information.*
+import kotlinx.coroutines.delay
 
 class AddInformationFragment : Fragment(R.layout.fragment_add_information) {
 
@@ -22,7 +25,16 @@ class AddInformationFragment : Fragment(R.layout.fragment_add_information) {
         viewModel.saveInformationSuccessful.observe(viewLifecycleOwner, { Successful ->
 
             if (Successful) {
-                findNavController().navigate(R.id.action_addInformationFragment_to_mainFragment)
+
+                lifecycleScope.launchWhenStarted {
+                    delay(500)
+                    progressBar2.isVisible=false
+                    findNavController().navigate(R.id.action_addInformationFragment_to_mainFragment)
+
+                }
+            }else{
+                progressBar2.isVisible=false
+
             }
         })
     }
@@ -41,6 +53,8 @@ class AddInformationFragment : Fragment(R.layout.fragment_add_information) {
                     && city.text.toString().isNotEmpty()
                     && phoneNumber.text.toString().isNotEmpty()
             ) {
+
+                progressBar2.isVisible=true
 
 
                 viewModel.saveUserInformation(

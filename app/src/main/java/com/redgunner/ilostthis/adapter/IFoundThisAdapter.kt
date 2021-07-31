@@ -1,30 +1,39 @@
 package com.redgunner.ilostthis.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.redgunner.ilostthis.R
+import com.redgunner.ilostthis.state.PostClick
 import com.redgunner.ilostthis.utils.FoundItem
 import kotlinx.android.synthetic.main.i_found_this_layout.view.*
 
-class IFoundThisAdapter(val postClick: () -> Unit):ListAdapter<FoundItem,IFoundThisAdapter.IFoundViewHolder> (IFoundListComparator()){
+class IFoundThisAdapter(val postClick: (PostClick) -> Unit):ListAdapter<FoundItem,IFoundThisAdapter.IFoundViewHolder> (IFoundListComparator()){
 
 
-    inner class IFoundViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class IFoundViewHolder(itemView: View, private val context: Context) : RecyclerView.ViewHolder(itemView) {
 
         private val title = itemView.iFoundTitle
         private val place = itemView.iFoundPlace
         private val category = itemView.IFoundcategory
         private val date = itemView.iFoundTime
+        private val image=itemView.iFoundItemImage
 
 
         init {
             title.setOnClickListener {
 
-                postClick()
+                postClick(PostClick.ItemFound(getItem(adapterPosition).postId,false))
+
+            }
+
+            image.setOnClickListener {
+                postClick(PostClick.ItemFound(getItem(adapterPosition).postId,false))
 
             }
         }
@@ -35,6 +44,8 @@ class IFoundThisAdapter(val postClick: () -> Unit):ListAdapter<FoundItem,IFoundT
             place.text = found.place
             category.text = found.category
             date.text = found.date
+            Glide.with(context)
+                    .load(found.imageUrl).into(image)
 
         }
 
@@ -44,11 +55,11 @@ class IFoundThisAdapter(val postClick: () -> Unit):ListAdapter<FoundItem,IFoundT
 
     class IFoundListComparator() : DiffUtil.ItemCallback<FoundItem>() {
         override fun areItemsTheSame(oldItem: FoundItem, newItem: FoundItem): Boolean {
-            return true
+            return false
         }
 
         override fun areContentsTheSame(oldItem: FoundItem, newItem: FoundItem): Boolean {
-            return true
+            return false
         }
 
     }
@@ -57,7 +68,7 @@ class IFoundThisAdapter(val postClick: () -> Unit):ListAdapter<FoundItem,IFoundT
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.i_found_this_layout, parent, false)
 
-        return IFoundViewHolder(view)
+        return IFoundViewHolder(view,parent.context)
     }
 
     override fun onBindViewHolder(holder: IFoundViewHolder, position: Int) {

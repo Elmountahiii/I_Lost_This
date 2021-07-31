@@ -98,6 +98,17 @@
                 app:layout_constraintStart_toStartOf="@+id/SingInPasswordInput"
                 app:layout_constraintTop_toBottomOf="@+id/SingInPasswordInput" />
 
+            <ProgressBar
+                android:id="@+id/progressBar5"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/SingInButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

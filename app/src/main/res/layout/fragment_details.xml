@@ -7,134 +7,179 @@
     tools:context=".view.fragment.foundAndLost.DetailsFragment">
 
 
- <ScrollView
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-     android:fillViewport="true">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:backgroundTint="@color/design_default_color_surface"
+            android:elevation="0dp"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="Details"
+            app:titleCentered="true" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
 
-     <androidx.constraintlayout.widget.ConstraintLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/MainDetaliItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="A Bug Lost In london" />
+
+            <ImageView
+                android:id="@+id/detilsImage"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MainDetaliItem"
+                tools:src="@tools:sample/backgrounds/scenic" />
 
 
+            <TextView
+                android:id="@+id/ItemTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detilsImage"
+                tools:text="I Lost A bag in london " />
 
-         <TextView
-             android:id="@+id/MainDetaliItem"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="16dp"
-             android:text="A Bug Lost In london"
-             android:textAppearance="?attr/textAppearanceHeadline6"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toTopOf="parent" />
 
-         <TextView
-             android:id="@+id/ItemTitle"
-             android:layout_width="0dp"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="8dp"
-             android:layout_marginTop="16dp"
-             android:layout_marginEnd="16dp"
-             android:text="I Lost A bag in london "
-             android:textAppearance="?attr/textAppearanceHeadline5"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.0"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/MainDetaliItem" />
+            <TextView
+                android:id="@+id/itemDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
 
-         <TextView
-             android:id="@+id/itemDescription"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="16dp"
-             android:layout_marginEnd="8dp"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/ItemTitle"
+                app:layout_constraintTop_toBottomOf="@+id/ItemTitle"
+                tools:text="its a red bag from ASOS shopper bag in burgandy cord i lost is in the airport" />
 
-             android:text="its a red bag from ASOS shopper bag in burgandy cord i lost is in the airport"
-             android:textAppearance="?attr/textAppearanceHeadline5"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.0"
-             app:layout_constraintStart_toStartOf="@+id/ItemTitle"
-             app:layout_constraintTop_toBottomOf="@+id/ItemTitle" />
+            <TextView
+                android:id="@+id/ItemTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/itemDescription"
+                app:layout_constraintTop_toBottomOf="@+id/itemDescription"
+                tools:text="Wednesday, July 28, 2021" />
 
-         <TextView
-             android:id="@+id/ItemTime"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="16dp"
-             android:text="Wednesday, July 28, 2021"
-             android:textAppearance="?attr/textAppearanceHeadline4"
-             android:textSize="20sp"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.0"
-             app:layout_constraintStart_toStartOf="@+id/itemDescription"
-             app:layout_constraintTop_toBottomOf="@+id/itemDescription" />
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="contact information"
+                android:textAppearance="?attr/textAppearanceHeadline4"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ItemTime" />
 
-         <TextView
-             android:id="@+id/textView24"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="16dp"
-             android:textAppearance="?attr/textAppearanceHeadline4"
-android:textColor="@color/black"
-             android:text="Contect Information"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/ItemTime" />
+            <TextView
+                android:id="@+id/UserFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView24"
+                tools:text="Full Nam : Youssef ElMountahi" />
 
-         <TextView
-             android:id="@+id/UserFullName"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="8dp"
-             android:layout_marginTop="16dp"
-             android:textAppearance="?attr/textAppearanceHeadline6"
-             android:text="Full Nam : Youssef ElMountahi"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.0"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/textView24" />
+            <TextView
+                android:id="@+id/UserAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/UserFullName"
+                app:layout_constraintTop_toBottomOf="@+id/UserFullName"
+                tools:text="8 Main Road London N23 1JV" />
 
-         <TextView
-             android:id="@+id/UserAddress"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="16dp"
-             android:text="8 Main Road London N23 1JV"
-             android:textAppearance="?attr/textAppearanceHeadline6"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.0"
-             app:layout_constraintStart_toStartOf="@+id/UserFullName"
-             app:layout_constraintTop_toBottomOf="@+id/UserFullName" />
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Send Me A message"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/UserAddress" />
 
-         <TextView
-             android:id="@+id/textView27"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="16dp"
-             android:text="Send Me A message"
-             android:textAppearance="?attr/textAppearanceHeadline5"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/UserAddress" />
+            <TextView
+                android:id="@+id/UserPhoneNumbber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?attr/textAppearanceHeadline3"
+                android:textColor="#35ce8d"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView27"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="01632 960304" />
 
-         <TextView
-             android:id="@+id/UserPhoneNumbber"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="24dp"
-             android:textAppearance="?attr/textAppearanceHeadline3"
-               android:textColor="#35ce8d"
-             android:text="01632 960304"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
-     </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
- </ScrollView>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

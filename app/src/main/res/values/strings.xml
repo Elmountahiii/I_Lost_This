@@ -2,8 +2,8 @@
     <string name="app_name">I Lost This</string>
     <!-- TODO: Remove or change this placeholder text -->
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="facebook_app_id">Your app Id</string>
-    <string name="fb_login_protocol_scheme">Your login protocol scheme</string>
+    <string name="facebook_app_id">538256480849003</string>
+    <string name="fb_login_protocol_scheme">fb538256480849003</string>
     <string name="welcome">Welcome</string>
     <string name="welcomeAvatar">WelcomeAvatar</string>
     <string name="email_address">Email address</string>

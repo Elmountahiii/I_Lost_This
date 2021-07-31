@@ -1,6 +1,7 @@
 package com.redgunner.ilostthis.view.fragment.auth
 
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.redgunner.ilostthis.R
@@ -18,6 +19,7 @@ class SgInFragment : Fragment(R.layout.fragment_sgin_in) {
         SingInButton.setOnClickListener {
 
             if (SignInEmail.text.toString().isNotEmpty()&& SignInPassword.text.toString().isNotEmpty()){
+                progressBar5.isVisible=true
                 viewModel.sgInIn(SignInEmail.text.toString(),SignInPassword.text.toString())
 
             }else{

@@ -45,21 +45,17 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
             when (menuItem.itemId) {
                 R.id.CategorySearch -> {
-                    Toast.makeText(this.context,"CategorySearch",Toast.LENGTH_LONG).show()
-                    drawerLayout.closeDrawers()
 
+                    findNavController().navigate(R.id.action_mainFragment_to_categoryFragment)
                     true
                 }
                 R.id.itemSearch -> {
-                    Toast.makeText(this.context,"itemSearch",Toast.LENGTH_LONG).show()
                     drawerLayout.closeDrawers()
-
                     true
                 }
                 R.id.LocationSearch -> {
-                    Toast.makeText(this.context,"LocationSearch",Toast.LENGTH_LONG).show()
 
-                    drawerLayout.closeDrawers()
+                    findNavController().navigate(R.id.action_mainFragment_to_locationFragment)
 
                     true
                 }
