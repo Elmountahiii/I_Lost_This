@@ -156,7 +156,6 @@ class LostAndFoundFireBaseRepository @Inject constructor() {
 
                 }
                 .addOnFailureListener { exception ->
-                    Log.d("7rira", "Error getting documents: ", exception)
                 }
     }
 
@@ -172,7 +171,6 @@ class LostAndFoundFireBaseRepository @Inject constructor() {
 
                 }
                 .addOnFailureListener { exception ->
-                    Log.d("7rira", "Error getting documents: ", exception)
                 }
     }
 
@@ -251,7 +249,6 @@ class LostAndFoundFireBaseRepository @Inject constructor() {
 
                 }
                 .addOnFailureListener { exception ->
-                    Log.d("7rira", "Error getting documents: ", exception)
                 }
     }
 
@@ -273,13 +270,11 @@ class LostAndFoundFireBaseRepository @Inject constructor() {
     }
 
     fun getFoundItemsByCategory(category: String){
-        Log.d("BigKoma","In Rebpo now the category is : $category")
 
         foundCollectionsPath.whereEqualTo("category",category)
                 .get()
                 .addOnSuccessListener { result ->
                     if (!result.isEmpty) {
-                        Log.d("BigKoma","we get the result ")
 
                         foundItemsListByCategory.value = result.toObjects(FoundItem::class.java)
 
@@ -289,7 +284,6 @@ class LostAndFoundFireBaseRepository @Inject constructor() {
 
                 }
                 .addOnFailureListener { exception ->
-                    Log.d("7rira", "Error getting documents: ", exception)
                 }
     }
 
@@ -307,7 +301,6 @@ class LostAndFoundFireBaseRepository @Inject constructor() {
 
                 }
                 .addOnFailureListener { exception ->
-                    Log.d("7rira", "Error getting documents: ", exception)
                 }
     }
 

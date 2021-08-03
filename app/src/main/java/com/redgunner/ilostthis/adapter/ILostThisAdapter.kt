@@ -42,7 +42,6 @@ class ILostThisAdapter(val postClick: (PostClick) -> Unit):ListAdapter<LostItem,
 
         fun bind(lost: LostItem) {
 
-            Log.d("zbi","mlk")
 
             title.text = lost.title
             place.text = lost.place
