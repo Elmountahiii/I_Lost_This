@@ -98,5 +98,10 @@ class MainViewModel @ViewModelInject constructor(
        firebaseRepository.getLocations()
     }
 
+    fun openWhatsapp(phoneNumber:String){
+
+
+    }
+
 
 }
